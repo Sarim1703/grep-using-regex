@@ -2,7 +2,7 @@ function matchPattern(inputLine, pattern) {
   if (pattern.length === 1) {
     return inputLine.includes(pattern);
   }
-  else if (pattern.length === "\d") {
+  else if (pattern === '\\d') {
     return /\d/.test(inputLine);
   }
   else {
