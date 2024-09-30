@@ -13,6 +13,11 @@ function matchPattern(inputLine, pattern) {
     const regex = new RegExp(`[${charGroup}]`, 'g');
     return regex.test(inputLine);
   }
+  else if(pattern.startsWith('[') && pattern.endsWith(']')) {
+    const charGroup = pattern.slice(1, -1);
+    const regex = new RegExp(`[^${charGroup}]`, 'g');
+    return regex.test(inputLine);
+  }
   else {
     throw new Error(`Unhandled pattern ${pattern}`);
   }
