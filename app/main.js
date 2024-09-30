@@ -8,6 +8,9 @@ function matchPattern(inputLine, pattern) {
   else if (pattern === '\\w') {
     return /\w/.test(inputLine);
   }
+  else if(pattern === '[abc]') {
+    return /[abc]/.test(inputLine);
+  }
   else {
     throw new Error(`Unhandled pattern ${pattern}`);
   }
